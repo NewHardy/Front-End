@@ -1,33 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>POKEDEX.com</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
-  <style>
-    body {
-      background-color: rgb(255 230 44);
-    }
-    .card-top {
-      background-color: rgb(223 223 223);
-      p {
-        margin-bottom: 0px;
-      }
-    }
-    .card-bottom {
-      background-color: white;
-    }
-    .card {
-      width: 150px;
-    }
-    h3 {
-      margin-top: 0px;
-    }
-    .card {
-      border: 1px solid rgb(215 212 194);
-    }
-  </style>
+
   <body>
     <div class="container">
       <input type="text" placeholder="Filtra pokemons por nombre..." />
@@ -36,15 +19,153 @@
           <div class="card-top">
             <img
               src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png"
-              alt=""
             />
-            <p>ID/1</p>
+            <p class="ID">ID / 1</p>
           </div>
           <div class="card-bottom">
             <h3>Bulbasaur</h3>
             <div class="type">
-              <span>posion</span>
-              <span>grass</span>
+              <span>POISON</span>
+              <span>GRASS</span>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-top">
+            <img
+              src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/2.png"
+            />
+            <p class="ID">ID / 2</p>
+          </div>
+          <div class="card-bottom">
+            <h3>Ivysaur</h3>
+            <div class="type">
+              <span>POISON</span>
+              <span>GRASS</span>
+            </div>
+            <div class="evo">
+              <p>Evoluciona de:</p>
+              <p class="evo-name">bulbasaur</p>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-top">
+            <img
+              src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/3.png"
+            />
+            <p class="ID">ID / 3</p>
+          </div>
+          <div class="card-bottom">
+            <h3>Venasaur</h3>
+            <div class="type">
+              <span>POISON</span>
+              <span>GRASS</span>
+            </div>
+            <div class="evo">
+              <p>Evoluciona de:</p>
+              <p class="evo-name">ivysaur</p>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-top">
+            <img
+              src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/4.png"
+            />
+            <p class="ID">ID / 4</p>
+          </div>
+          <div class="card-bottom">
+            <h3>Charmander</h3>
+            <div class="type">
+              <span>FIRE</span>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-top">
+            <img
+              src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/5.png"
+            />
+            <p class="ID">ID / 5</p>
+          </div>
+          <div class="card-bottom">
+            <h3>Charmeleon</h3>
+            <div class="type">
+              <span>FIRE</span>
+            </div>
+            <div class="evo">
+              <p>Evoluciona de:</p>
+              <p class="evo-name">charmander</p>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-top">
+            <img
+              src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/6.png"
+            />
+            <p class="ID">ID / 6</p>
+          </div>
+          <div class="card-bottom">
+            <h3>Charizard</h3>
+            <div class="type">
+              <span>FIRE</span>
+              <span>FLYING</span>
+            </div>
+            <div class="evo">
+              <p>Evoluciona de:</p>
+              <p class="evo-name">charmeleon</p>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-top">
+            <img
+              src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/7.png"
+            />
+            <p class="ID">ID / 7</p>
+          </div>
+          <div class="card-bottom">
+            <h3>Squirtle</h3>
+            <div class="type">
+              <span>WATER</span>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-top">
+            <img
+              src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/8.png"
+            />
+            <p class="ID">ID / 8</p>
+          </div>
+          <div class="card-bottom">
+            <h3>Wartortole</h3>
+            <div class="type">
+              <span>WATER</span>
+            </div>
+            <div class="evo">
+              <p>Evoluciona de:</p>
+              <p class="evo-name">squirtle</p>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-top">
+            <img
+              src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/9.png"
+            />
+            <p class="ID">ID / 9</p>
+          </div>
+          <div class="card-bottom">
+            <h3>Blastoise</h3>
+            <div class="type">
+              <span>WATER</span>
+            </div>
+            <div class="evo">
+              <p>Evoluciona de:</p>
+              <p class="evo-name">wartortole</p>
             </div>
           </div>
         </div>
