@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Button</title>
+    <script>
+      function button() {
+        console.log("Button Pressed!");
+      }
+      function alerta() {
+        const text = document.getElementById("text").value;
+        alert(text);
+      }
+    </script>
+  </head>
+  <body>
+    <button onclick="button()">click</button>
+
+    <input type="text" id="text" />
+    <button onclick="alerta()">Alert</button>
+  </body>
+</html>

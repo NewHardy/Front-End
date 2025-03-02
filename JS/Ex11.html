@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Ex11</title>
+    <script>
+      function addElement() {
+        let input = document.getElementById("text");
+        let lista = document.getElementById("list");
+
+        let text = input.value.trim();
+
+        if (text === "") {
+          alert("texto vacio");
+        } else {
+          let element = document.createElement("li");
+          element.textContent = text;
+          lista.appendChild(element);
+        }
+        input.value = "";
+      }
+    </script>
+  </head>
+  <body>
+    <h2>add element to list</h2>
+    <input type="text" id="text" />
+    <button onclick="addElement()">Add</button>
+
+    <ul id="list"></ul>
+  </body>
+</html>
