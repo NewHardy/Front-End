@@ -16,7 +16,7 @@
       }
     </style>
     <script>
-      function calculate(operacion) {
+      function calcular(operacion) {
         let num1 = document.getElementById("num1").value;
         let num2 = document.getElementById("num2").value;
         let resultado;
@@ -25,7 +25,7 @@
         } else {
           switch (operacion) {
             case "+":
-              resultado = `la suma es: ${num1 + num2}`;
+              resultado = `la suma es: ${parseInt(num1) + parseInt(num2)}`;
               break;
             case "-":
               resultado = `la resta es: ${num1 - num2}`;
@@ -38,7 +38,7 @@
               break;
           }
         }
-        document.getElementById("resultado").innerText = resultado;
+        document.getElementById("resultado").textContent = resultado;
       }
     </script>
   </head>

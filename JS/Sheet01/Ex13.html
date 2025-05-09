@@ -17,22 +17,15 @@
     </style>
     <script>
       function generarAleatorio() {
-        let min = document.getElementById("min").value;
         let max = document.getElementById("max").value;
-        let result;
-        if (min === "" || max === "" || min > max) {
-          result = "no Valido";
-        } else {
-          result = `Random Number: ${
-            Math.floor(Math.random() * (max - min + 1)) + min
-          }`;
-        }
-        document.getElementById("resultado").innerText = resultado;
+        let resultado;
+          resultado = `Random Number: ${
+            Math.floor(Math.random()*max)}`;
+        document.getElementById("resultado").textContent = resultado;
       }
     </script>
   </head>
   <body>
-    <input id="min" placeholder="min" />
     <input id="max" placeholder="max" />
     <p>Button:</p>
     <button onclick="generarAleatorio()">generar</button>

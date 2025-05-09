@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      const randomNum = generateRandom();
+      function generateRandom() {
+        let resultado;
+        resultado = Math.floor(Math.random() * 100);
+        return resultado;
+      }
+      function guess() {
+        let p = document.getElementById("result")
+        const guessNum = document.getElementById("input").value;
+        let result;
+        if (guessNum < randomNum) {
+          result = "Too Low";
+          p.style.color="red";
+        } else if (guessNum > randomNum) {
+          result = "Too High";
+          p.style.color="red";
+        } else {
+          result = "VICTORY ROYALE";
+          p.style.color="green";
+        }
+        p.textContent = result;
+      }
+    </script>
+  </head>
+  <body>
+    <input id="input" />
+    <button onclick="guess()">GUESS</button>
+    <p id="result"></p>
+  </body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ejercicio 13 - Alternar clase en varios</title>
+  <style>
+    .caja {
+      width: 150px;
+      height: 100px;
+      background-color: lightgray;
+      margin: 10px;
+      padding: 10px;
+      display: inline-block;
+      text-align: center;
+      line-height: 80px;
+    }
+
+    .activo {
+      background-color: lightgreen;
+      font-weight: bold;
+      border: 2px solid green;
+    }
+  </style>
+  <script src="script.js"></script>
+</head>
+<body>
+
+  <div class="caja">Elemento 1</div>
+  <div class="caja">Elemento 2</div>
+  <div class="caja">Elemento 3</div>
+
+  <br><br>
+  <button onclick="alternarTodos()">Cambiar Todos</button>
+</body>
+</html>
