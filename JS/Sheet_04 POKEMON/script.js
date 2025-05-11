@@ -51,41 +51,48 @@ document.addEventListener("DOMContentLoaded", async () => {
     });
   }
 
-  function getPokemonsUrls() {
-    const arrayUrls = [];
-    fetch("https://pokeapi.co/api/v2/pokemon")
-      .then((response) => response.json())
-      .then((result) => {
-        pokemons = result.results;
+  // function getPokemonsUrls() {
+  //   const arrayUrls = [];
+  //   fetch("https://pokeapi.co/api/v2/pokemon")
+  //     .then((response) => response.json())
+  //     .then((result) => {
+  //       pokemons = result.results;
 
-        pokemons.forEach((pokemon) => {
-          arrayUrls.push(pokemon.url);
-        });
-      });
+  //       pokemons.forEach((pokemon) => {
+  //         arrayUrls.push(pokemon.url);
+  //       });
+  //     });
+  // }
+
+  async function getinfo() {
+    const response = await fetch("http://pokeapi.co/api/v2/pokemon");
+    const result = await response.json();
+    const url = result.results;
+
+    const createdPokemon = await Promise.all(
+      arrayUrls.map(async (pokemon) => {
+        const pokemoInfo = await fetch(pokemon.url);
+        const json = await pokemoInfo.json();
+        const picture = json.sprites.front_default;
+        const id = json.id;
+        const types = json.types;
+        const name = pokemon.name;
+        return {
+          photo: picture,
+          id: id,
+          name: name,
+          types: types,
+        };
+      })
+    );
+    return createdPokemon;
   }
 
-  function getinfo(url) {
-    const picture = "";
-    const id = 0;
-    const type = "";
-    const name = "";
-
-    const pokemon = fetch(url);
-
-    picture = pokemon.sprites.front_default;
-    id = pokemon.ID;
-    pokemon.types.forEach((typePokemon) => {
-      type.add(typePokemon.name);
-    });
-    name = pokemon.forms.name;
-
-    createCard(picture, id, name, type);
-  }
-
-  function main() {
-    let arrayUrls = [];
-    arrayUrls = getPokemonsUrls();
-    arrayUrls.forEach((url) => getinfo(url));
+  async function main() {
+    const arrayUrls = await getinfo();
+    arrayUrls.forEach((pokemon) =>
+      createCard(pokemon.foto, pokemon.id, pokemon.name, pokemon.type)
+    );
   }
 
   main();
