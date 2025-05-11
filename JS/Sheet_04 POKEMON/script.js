@@ -67,11 +67,11 @@ document.addEventListener("DOMContentLoaded", async () => {
   async function getinfo() {
     const response = await fetch("http://pokeapi.co/api/v2/pokemon");
     const result = await response.json();
-    const url = result.results;
+    const arrayUrls = result.results;
 
     const createdPokemon = await Promise.all(
       arrayUrls.map(async (pokemon) => {
-        const pokemoInfo = await fetch(pokemon.url);
+        const pokemoInfo = await fetch(pokemon.arrayUrls);
         const json = await pokemoInfo.json();
         const picture = json.sprites.front_default;
         const id = json.id;
@@ -91,7 +91,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   async function main() {
     const arrayUrls = await getinfo();
     arrayUrls.forEach((pokemon) =>
-      createCard(pokemon.foto, pokemon.id, pokemon.name, pokemon.type)
+      createCard(pokemon.photo, pokemon.id, pokemon.name, pokemon.type)
     );
   }
 
