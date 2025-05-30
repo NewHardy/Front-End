@@ -135,7 +135,20 @@ document.addEventListener("DOMContentLoaded", async () => {
       const newOffset = Math.max(offset - limit, 0);
       window.location.search = `?offset=${newOffset}`;
     });
-
+    function randomColor() {
+      const r = Math.floor(Math.random() * 256);
+      const g = Math.floor(Math.random() * 256);
+      const b = Math.floor(Math.random() * 256);
+      return `rgb(${r},${g},${b})`;
+    }
+    function changeColor() {
+      div.style.backgroundColor = randomColor();
+      div.style.color = randomColor();
+    }
+    prevButton.addEventListener("mouseover", "changeColor()");
+    prevButton.addEventListener("mouseout", "changeColor()");
+    nextButton.addEventListener("mouseover", "changeColor()");
+    prevButton.addEventListener("mouseout", "chageColor()");
     nextButton.addEventListener("click", () => {
       const newOffset = offset + limit;
       window.location.search = `?offset=${newOffset}`;
