@@ -15,11 +15,11 @@ body {
   padding: 10px 20px;
   font-size: 16px;
   cursor: pointer;
+  transition: 0.3s;
 }
-.nav-button:hover
-{
-  color: white;
-  background-color: darkred;
+.nav-button:hover:enabled {
+  color: rgb(254 249 237);
+  background-color: rgb(240 71 61);
 }
 input {
   padding: 0px;
@@ -41,7 +41,9 @@ input {
   gap: 20px;
   height: 100%;
 }
-
+#pokeball {
+  height: 97px;
+}
 .card {
   border: 1px solid rgb(215 212 194);
   background-color: white;

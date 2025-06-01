@@ -118,64 +118,25 @@ document.addEventListener("DOMContentLoaded", async () => {
     createNavigationPokeball();
   }
 
-  function createNavigationButtons() {
-    const grid = document.getElementById("grid");
-    const buttonContainer = document.createElement("div");
-    const prevButton = document.createElement("button");
-    const nextButton = document.createElement("button");
-
-    buttonContainer.classList.add("nav-buttons");
-    prevButton.textContent = "Prev";
-    nextButton.textContent = "Next";
-
-    prevButton.classList.add("nav-button");
-    nextButton.classList.add("nav-button");
-
-    prevButton.addEventListener("click", () => {
-      const newOffset = Math.max(offset - limit, 0);
-      window.location.search = `?offset=${newOffset}`;
-    });
-    nextButton.addEventListener("click", () => {
-      const newOffset = offset + limit;
-      window.location.search = `?offset=${newOffset}`;
-    });
-
-    if (offset <= 0) {
-      prevButton.disabled = true;
-    } else {
-      prevButton.disabled = false;
-    }
-
-    if (offset >= 1300) {
-      nextButton.disabled = true;
-    } else {
-      nextButton.disabled = false;
-    }
-
-    buttonContainer.appendChild(prevButton);
-    buttonContainer.appendChild(nextButton);
-    grid.appendChild(buttonContainer);
-  }
-
   function createNavigationPokeball() {
     const grid = document.getElementById("grid");
     const pokeballCard = document.createElement("div");
     const cardTop = document.createElement("div");
     const cardBottom = document.createElement("div");
     const pokeball = document.createElement("img");
-    const prevButton = document.createElement("button");
     const nextButton = document.createElement("button");
+    const prevButton = document.createElement("button");
 
     pokeballCard.classList.add("card");
     cardTop.classList.add("card-top");
     cardBottom.classList.add("card-bottom");
 
-    buttonContainer.classList.add("nav-buttons");
+    cardBottom.classList.add("nav-buttons");
     prevButton.textContent = "Prev";
     nextButton.textContent = "Next";
 
-    prevButton.classList.add("nav-button");
     nextButton.classList.add("nav-button");
+    prevButton.classList.add("nav-button");
 
     prevButton.addEventListener("click", () => {
       const newOffset = Math.max(offset - limit, 0);
@@ -198,14 +159,15 @@ document.addEventListener("DOMContentLoaded", async () => {
       nextButton.disabled = false;
     }
 
-    pokeball.scr = "pokeball.png";
+    pokeball.src = "pokeball.png";
+    pokeball.id = "pokeball";
 
     grid.appendChild(pokeballCard);
     pokeballCard.appendChild(cardTop);
     pokeballCard.appendChild(cardBottom);
     cardTop.appendChild(pokeball);
-    cardBottom.appendChild(nextButton);
     cardBottom.appendChild(prevButton);
+    cardBottom.appendChild(nextButton);
   }
 
   main();
