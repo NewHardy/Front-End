@@ -1,51 +1,32 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React from "react";
+import ListaDeTarjetas from "./components/ListaDeTarjetas";
+import "./App.css";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const productos = [
+    {
+      nombre: "Camiseta",
+      precio: 19.99,
+      descripcion: "Camiseta de algodón 100% orgánico.",
+    },
+    {
+      nombre: "Pantalones",
+      precio: 39.99,
+      descripcion: "Pantalones cómodos para uso diario.",
+    },
+    {
+      nombre: "Zapatos deportivos",
+      precio: 59.99,
+      descripcion: "Perfectos para correr o caminar largas distancias.",
+    },
+  ];
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <div className="App">
+      <h1>Lista de Productos</h1>
+      <ListaDeProductos productos={productos} />
+    </div>
+  );
 }
 
-function Ex1()
-{
-  <div id="tarjeta">
-    <h2 id="nombre">
-
-    </h2>
-    <h3 id="apellido">
-
-    </h3>
-    <p id="ocupcion">
-
-    </p>
-    <img id="imagen URL"></img>
-  </div>
-}
-
-export default Ex1
+export default App;
