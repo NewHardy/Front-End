@@ -1,4 +1,5 @@
 import React from "react";
+import Producto from "./Producto";
 
 const ListaDeProductos = ({ productos }) => {
   return (
@@ -14,3 +15,5 @@ const ListaDeProductos = ({ productos }) => {
     </div>
   );
 };
+
+export default ListaDeProductos;

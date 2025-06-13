@@ -1,0 +1,23 @@
+.tarjeta {
+  background-color: #91d3e0;
+  margin: 20px;
+  padding: 5px;
+  width: 60%;
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.content h2 {
+  margin: 2px;
+}
+.content p {
+  margin: 2px;
+}
+img {
+  border-radius: 2px;
+  border-color: brown;
+}

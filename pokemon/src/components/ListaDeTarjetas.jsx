@@ -1,4 +1,5 @@
 import React from "react";
+import Tarjeta from "./Tarjeta";
 
 const personas = [
   {
@@ -30,3 +31,5 @@ const ListaDeTarjetas = () => {
     </div>
   );
 };
+
+export default ListaDeTarjetas;

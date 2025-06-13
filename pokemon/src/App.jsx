@@ -1,30 +1,31 @@
 import React from "react";
 import ListaDeTarjetas from "./components/ListaDeTarjetas";
+import ListaDeProductos from "./components/ListaDeProductos";
+import Menu from "./components/menu";
 import "./App.css";
-
+const yes = [
+  {
+    text: "hello",
+    url: "yes.com",
+  },
+  {
+    text: "adios",
+    url: "no.com",
+  },
+  {
+    text: "cya",
+    url: "maybe.com",
+  },
+  {
+    text: "yesterday",
+    url: "perhaps.com",
+  },
+];
 function App() {
-  const productos = [
-    {
-      nombre: "Camiseta",
-      precio: 19.99,
-      descripcion: "Camiseta de algodón 100% orgánico.",
-    },
-    {
-      nombre: "Pantalones",
-      precio: 39.99,
-      descripcion: "Pantalones cómodos para uso diario.",
-    },
-    {
-      nombre: "Zapatos deportivos",
-      precio: 59.99,
-      descripcion: "Perfectos para correr o caminar largas distancias.",
-    },
-  ];
-
   return (
     <div className="App">
-      <h1>Lista de Productos</h1>
-      <ListaDeProductos productos={productos} />
+      <h1>Lista de Tarjetas</h1>
+      <ListaDeTarjetas />
     </div>
   );
 }

@@ -9,3 +9,5 @@ const Producto = ({ nombre, precio, descripcion }) => {
     </div>
   );
 };
+
+export default Producto;
