@@ -5,7 +5,7 @@ const Tarjeta = ({ nombre, apellido, trabajo, imagenURL }) => {
   return (
     <div className="tarjeta">
       <img src={imagenURL} alt={`def`} />
-      <div>
+      <div className="content">
         <h2>
           {nombre} {apellido}
         </h2>

@@ -2,30 +2,30 @@ import React from "react";
 import ListaDeTarjetas from "./components/ListaDeTarjetas";
 import ListaDeProductos from "./components/ListaDeProductos";
 import Menu from "./components/menu";
+import ListaDePerfiles from "./components/ListaDePerfiles";
 import "./App.css";
-const yes = [
+const perfiles = [
   {
-    text: "hello",
-    url: "yes.com",
+    imagenURL: "https://randomuser.me/api/portraits/men/1.jpg",
+    nombre: "Carlos",
+    descripcion: "Sin trabajo",
   },
   {
-    text: "adios",
-    url: "no.com",
+    imagenURL: "https://randomuser.me/api/portraits/men/2.jpg",
+    nombre: "Juan",
+    descripcion: "Programador",
   },
   {
-    text: "cya",
-    url: "maybe.com",
-  },
-  {
-    text: "yesterday",
-    url: "perhaps.com",
+    imagenURL: "https://randomuser.me/api/portraits/men/3.jpg",
+    nombre: "Pedro",
+    descripcion: "Desarrollador fullstack",
   },
 ];
 function App() {
   return (
     <div className="App">
-      <h1>Lista de Tarjetas</h1>
-      <ListaDeTarjetas />
+      <h1>Lista de Perfiles</h1>
+      <ListaDePerfiles perfiles={perfiles} />
     </div>
   );
 }
