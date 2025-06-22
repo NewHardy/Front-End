@@ -3,6 +3,10 @@ import ListaDeTarjetas from "./components/ListaDeTarjetas";
 import ListaDeProductos from "./components/ListaDeProductos";
 import Menu from "./components/menu";
 import ListaDePerfiles from "./components/ListaDePerfiles";
+import Ex1 from "./useState/Ex1";
+import Ex2 from "./useState/Ex2";
+import Ex3 from "./useState/Ex3";
+import Ex4 from "./useState/Ex4";
 import "./App.css";
 const perfiles = [
   {
@@ -24,8 +28,7 @@ const perfiles = [
 function App() {
   return (
     <div className="App">
-      <h1>Lista de Perfiles</h1>
-      <ListaDePerfiles perfiles={perfiles} />
+      <Ex2 />
     </div>
   );
 }
