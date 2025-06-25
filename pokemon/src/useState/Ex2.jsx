@@ -18,6 +18,7 @@ function fillForm() {
   }
 
   function handleSubmit(e) {
+    e.preventDefault();
     setMessage(
       `Name: ${userInfo.name}\nEmail: ${userInfo.email}\nPassword: ${userInfo.password}`
     );
