@@ -1,15 +1,18 @@
 import React, { useState, useEffect } from "react";
 
 function RelojDigital() {
-  const [hora, setTime] = useState(new Date());
+  const [hora, setHora] = useState(new Date());
 
   useEffect(() => {
     const intervalo = setInterval(() => {
-      setTime(new Date());
+      setHora(new Date());
     }, 1000);
-  }, []);
 
-  return <div>{hora}</div>;
+    return () => clearInterval(intervalo);
+  }, []);
+  const finalHora = hora.toLocaleTimeString();
+
+  return <div>{finalHora}</div>;
 }
 
 export default RelojDigital;

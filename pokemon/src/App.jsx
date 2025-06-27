@@ -8,7 +8,7 @@ import Ex2 from "./useState/Ex2";
 import Ex3 from "./useState/Ex3";
 import Ex4 from "./useState/Ex4";
 import Ex5 from "./useState/Ex5";
-//import Ex6 from "./useState/Ex6";
+import Ex6 from "./useState/Ex6";
 //import Ex7 from "./useState/Ex7";
 import "./App.css";
 const perfiles = [
@@ -31,7 +31,7 @@ const perfiles = [
 function App() {
   return (
     <div className="App">
-      <Ex5 />
+      <Ex6 />
     </div>
   );
 }

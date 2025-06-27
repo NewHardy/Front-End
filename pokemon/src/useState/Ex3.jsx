@@ -1,19 +1,23 @@
 import React, { useState } from "react";
 
-function toDoList() {
+function ToDoList() {
   const [task, setTask] = useState("");
   const [tasks, setTasks] = useState([]);
 
   function sendTask() {
     if (task !== "") {
       setTasks([...tasks, task]);
+      setTask("");
     }
   }
+
   function deleteTask() {
     const indexToDelete = tasks.findIndex((t) => t === task);
-    const updatedTasks = [...tasks];
-    updatedTasks.splice(indexToDelete, 1);
-    setTasks(updatedTasks);
+    if (indexToDelete !== -1) {
+      const updatedTasks = [...tasks];
+      updatedTasks.splice(indexToDelete, 1);
+      setTasks(updatedTasks);
+    }
   }
 
   return (
@@ -22,14 +26,20 @@ function toDoList() {
         <input
           type="text"
           placeholder="Task"
+          value={task}
           onChange={(e) => setTask(e.target.value)}
         />
         <button onClick={sendTask}>Add</button>
         <button onClick={deleteTask}>Delete</button>
       </div>
-      <ul id="List"></ul>
+
+      <ul id="List">
+        {tasks.map((t, index) => (
+          <li key={index}>{t}</li>
+        ))}
+      </ul>
     </div>
   );
 }
 
-export default toDoList;
+export default ToDoList;
