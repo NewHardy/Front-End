@@ -3,34 +3,63 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Registration</title>
+    <title>Registro</title>
     <link rel="stylesheet" href="regStyles.css" />
+    <script src="regScript.js"></script>
   </head>
   <body>
     <div class="reg-container">
       <h2>Crear Cuenta</h2>
 
-      <div class="container">
-        <h3 for="usuario">Correo o Nombre de Usuario</h3>
-        <input
-          type="text"
-          id="usuario"
-          placeholder="Ej: ejemplo@correo.com o nombre123"
-        />
-      </div>
+      <form onsubmit="registrarUsuario(event)">
+        <div class="container">
+          <h3 for="email">Correo</h3>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Ej: ejemplo@correo.com"
+            required
+          />
+        </div>
 
-      <div class="container">
-        <h3 for="contrasena">Contraseña</h3>
-        <input
-          type="password"
-          id="contrasena"
-          placeholder="Crea una contraseña"
-        />
-      </div>
+        <div class="container">
+          <h3 for="usuario">Usuario</h3>
+          <input
+            type="text"
+            id="usuario"
+            name="username"
+            placeholder="Ej: ejemplo123"
+            required
+          />
+        </div>
 
-      <div class="container">
-        <button class="btn">Registrarse</button>
-      </div>
+        <div class="container">
+          <h3 for="contrasena">Contraseña</h3>
+          <input
+            type="password"
+            id="contrasena"
+            name="password"
+            placeholder="Crea una contraseña"
+            required
+          />
+        </div>
+
+        <div class="container">
+          <h3 for="confirmarContrasena">Confirmar Contraseña</h3>
+          <input
+            type="password"
+            id="confirmarContrasena"
+            name="confirmarContrasena"
+            placeholder="Repite la contraseña"
+            required
+          />
+        </div>
+
+        <div class="container">
+          <button type="submit" class="btn">Registrarse</button>
+        </div>
+      </form>
 
       <div class="extra">
         ¿Ya tienes cuenta? <a href="login.html">Inicia sesión</a>

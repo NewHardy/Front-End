@@ -1,24 +1,20 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 
-function ListaPokemons() {
+function Kakudobno() {
   const [pokemons, setPokemons] = useState([]);
 
   useEffect(() => {
-    fetch("https://pokeapi.co/api/v2/pokemon?limit=10")
+    fetch("https://pokeapi.co/api/v2/pokemon")
       .then((res) => res.json())
       .then((data) => setPokemons(data.results));
   }, []);
-
   return (
-    <div>
-      <h2>Lista de Pokémon</h2>
-      <ul>
-        {pokemons.map((pokemon, index) => (
-          <li key={index}>{pokemon.name}</li>
-        ))}
-      </ul>
-    </div>
+    <>
+      {pokemons.map((yes, hhtp) => (
+        <p key={hhtp}>{yes.name}</p>
+      ))}
+    </>
   );
 }
 
-export default ListaPokemons;
+export default Kakudobno;

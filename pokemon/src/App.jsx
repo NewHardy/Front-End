@@ -9,29 +9,17 @@ import Ex3 from "./useState/Ex3";
 import Ex4 from "./useState/Ex4";
 import Ex5 from "./useState/Ex5";
 import Ex6 from "./useState/Ex6";
-//import Ex7 from "./useState/Ex7";
+import Ex7 from "./useState/Ex7";
+import Ex8 from "./useState/Ex8";
+import Ex9 from "./useState/Ex9";
+import Ex10 from "./useState/Ex10";
+import main from "./pokemons/main";
 import "./App.css";
-const perfiles = [
-  {
-    imagenURL: "https://randomuser.me/api/portraits/men/1.jpg",
-    nombre: "Carlos",
-    descripcion: "Sin trabajo",
-  },
-  {
-    imagenURL: "https://randomuser.me/api/portraits/men/2.jpg",
-    nombre: "Juan",
-    descripcion: "Programador",
-  },
-  {
-    imagenURL: "https://randomuser.me/api/portraits/men/3.jpg",
-    nombre: "Pedro",
-    descripcion: "Desarrollador fullstack",
-  },
-];
+
 function App() {
   return (
     <div className="App">
-      <Ex6 />
+      <main />
     </div>
   );
 }
