@@ -4,8 +4,9 @@ import "./pokedex.css";
 import NavButtons from "./navButtons.jsx";
 import SearchBar from "./searchBar.jsx";
 
-const Pokedex = (filter) => {
+const Pokedex = () => {
   const [pokemons, setPokemons] = useState([]);
+  const [filter, setFilter] = useState("");
   const [offset, setOffset] = useState(0);
 
   useEffect(() => {
@@ -29,7 +30,6 @@ const Pokedex = (filter) => {
             name: pokemonJson.name,
             types: pokemonJson.types,
             evo: evoValue.evolves_from_species?.name || null,
-            filter: filter,
           };
         })
       );
@@ -38,10 +38,12 @@ const Pokedex = (filter) => {
     getPokemons();
   }, [offset]);
 
+  const filtredPokemons = pokemons.filter((p) => p.name.includes(filter));
+
   return (
     <>
-      <SearchBar />
-      <Pokegrid pokemons={pokemons} />
+      <SearchBar setFilter={setFilter} />
+      <Pokegrid pokemons={filtredPokemons} />
       <NavButtons offset={offset} setOffset={setOffset} />
     </>
   );

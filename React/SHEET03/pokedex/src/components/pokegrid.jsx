@@ -1,7 +1,7 @@
 import Card from "./pokecard";
 import "./pokegrid.css";
 
-const PokeGrid = ({ pokemons }, filter) => {
+const PokeGrid = ({ pokemons }) => {
   return (
     <div className="grid">
       {pokemons.map((pokemon) => (
@@ -12,7 +12,6 @@ const PokeGrid = ({ pokemons }, filter) => {
           name={pokemon.name}
           types={pokemon.types}
           evo={pokemon.evo}
-          filter={filter}
         />
       ))}
     </div>
