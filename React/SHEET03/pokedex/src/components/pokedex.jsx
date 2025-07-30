@@ -10,6 +10,50 @@ const Pokedex = () => {
   const [offset, setOffset] = useState(0);
 
   useEffect(() => {
+    async function getEvo(speciesUrl) {
+      const res = await fetch(speciesUrl);
+      const speciesData = await res.json();
+      return speciesData.evolves_from_species
+        ? speciesData.evolves_from_species.name
+        : "";
+    }
+
+    async function getInfo() {
+      const response = await fetch("https://pokeapi.co/api/v2/pokemon");
+
+      const data = await response.json();
+      const pokemons = data.results;
+
+      const finalData = await Promise.all(
+        pokemons.map(async (pokemon) => {
+          const res = await fetch(pokemon.url);
+          const url = await res.json();
+
+          const id = url.id;
+          const image = url.sprites.front_default;
+          const name = url.name;
+          const types = url.types.map((t) => t.type.name);
+          const evoFrom = url.species?.url ? await getEvo(url.species.url) : "";
+          post({ id, image, name, types, evoFrom });
+        })
+      );
+
+      return finalData;
+    }
+    function post(pokemon) {
+      fetch("http://localhost:8080", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(pokemon),
+      });
+    }
+
+    getInfo();
+  }, []);
+
+  useEffect(() => {
     const getPokemons = async () => {
       const resul = await fetch(
         `https://pokeapi.co/api/v2/pokemon?offset=${offset}&limit=20`

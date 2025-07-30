@@ -1,5 +1,2 @@
-card 34
-edex 43
-grid 15
-
-have problem with the searchBar
+java http get 20 pokemon
+make springboot for pokemon

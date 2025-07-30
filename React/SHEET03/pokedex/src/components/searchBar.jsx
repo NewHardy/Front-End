@@ -1,4 +1,4 @@
-import { useState } from "react";
+import "./searchBar.css";
 
 const searchBar = ({ setFilter }) => {
   const sendHandler = (e) => {
@@ -6,11 +6,13 @@ const searchBar = ({ setFilter }) => {
   };
 
   return (
-    <input
-      type="text"
-      placeholder="Search for your pokemon"
-      onChange={sendHandler}
-    />
+    <div className="yes">
+      <input
+        type="text"
+        placeholder="Search for your pokemon"
+        onChange={sendHandler}
+      />
+    </div>
   );
 };
 
