@@ -11,7 +11,7 @@ const PokeGrid = ({ pokemons }) => {
           id={pokemon.id}
           name={pokemon.name}
           types={pokemon.types}
-          evo={pokemon.evo}
+          evo={pokemon.evoFrom}
         />
       ))}
     </div>

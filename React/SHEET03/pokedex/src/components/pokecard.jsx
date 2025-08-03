@@ -18,7 +18,7 @@ const Card = ({ image, id, name, types, evo }) => {
         <h3 className="name">{capitalize(name)}</h3>
         <ul className="types">
           {types.map((type, yes) => (
-            <li key={yes}>{type.type.name.toUpperCase()}</li>
+            <li key={yes}>{type.toUpperCase()}</li>
           ))}
         </ul>
         {evo && (

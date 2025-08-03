@@ -12,6 +12,7 @@
     position: relative;
     img {
       align-items: center;
+      height: 96px;
     }
     .id {
       margin: 0;

@@ -1,6 +1,6 @@
 import "./navbuttons.css";
 
-const NavButtons = ({ offset, setOffset }) => {
+const NavButtons = ({ offset, size, setOffset }) => {
   return (
     <div className="navContainer">
       <button
@@ -13,7 +13,7 @@ const NavButtons = ({ offset, setOffset }) => {
       <button
         className="next"
         onClick={() => setOffset(offset + 20)}
-        disabled={offset === 1000}
+        disabled={size - offset <= 21}
       >
         Next
       </button>
