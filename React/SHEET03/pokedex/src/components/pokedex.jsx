@@ -10,6 +10,7 @@ const Pokedex = () => {
   const [filter, setFilter] = useState("");
   const [offset, setOffset] = useState(0);
   const [isLoading, setLoading] = useState(true);
+  const [size, setSize] = useState(0);
   //THE USE EFFECT
   // useEffect(() => {
   //   async function getEvo(speciesUrl) {
@@ -22,7 +23,7 @@ const Pokedex = () => {
 
   //   async function getInfo() {
   //     const response = await fetch(
-  //       "https://pokeapi.co/api/v2/pokemon?offset=0&limit=105"
+  //       "https://pokeapi.co/api/v2/pokemon?offset=0&limit=106"
   //     );
 
   //     const data = await response.json();
@@ -64,26 +65,29 @@ const Pokedex = () => {
       const info = await resul.json();
       setPokemons(info);
     };
-    setLoading(false);
     getPokemons();
+    setLoading(false);
   }, [offset]);
 
   const filtredPokemons = pokemons.filter((p) => p.name.includes(filter));
 
+  const getSize = async () => {
+    const resul = await fetch(`http://localhost:8080/pokemons/size`);
+    const size = await resul.json();
+    console.log(size);
+    setSize(size);
+  };
+  getSize();
+
   return (
     <>
-      <p>{pokemons.length}</p>
       <SearchBar setFilter={setFilter} />
       {isLoading === true ? (
         <Loading />
       ) : (
         <Pokegrid pokemons={filtredPokemons} />
       )}
-      <NavButtons
-        offset={offset}
-        size={pokemons.length}
-        setOffset={setOffset}
-      />
+      <NavButtons offset={offset} size={size} setOffset={setOffset} />
     </>
   );
 };

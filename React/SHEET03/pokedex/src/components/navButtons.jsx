@@ -5,14 +5,14 @@ const NavButtons = ({ offset, size, setOffset }) => {
     <div className="navContainer">
       <button
         className="prev"
-        onClick={() => setOffset(offset - 20)}
+        onClick={() => setOffset(offset - 21)}
         disabled={offset === 0}
       >
         Prev
       </button>
       <button
         className="next"
-        onClick={() => setOffset(offset + 20)}
+        onClick={() => setOffset(offset + 21)}
         disabled={size - offset <= 21}
       >
         Next

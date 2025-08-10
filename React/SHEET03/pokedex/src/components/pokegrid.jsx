@@ -8,7 +8,7 @@ const PokeGrid = ({ pokemons }) => {
         <Card
           key={pokemon.id}
           image={pokemon.image}
-          id={pokemon.id}
+          pokeId={pokemon.id}
           name={pokemon.name}
           types={pokemon.types}
           evo={pokemon.evoFrom}

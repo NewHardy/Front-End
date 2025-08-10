@@ -1,6 +1,6 @@
 import "./pokecard.css";
 
-const Card = ({ image, id, name, types, evo }) => {
+const Card = ({ image, pokeId, name, types, evo }) => {
   function capitalize(txt) {
     if (!txt) {
       return txt;
@@ -8,11 +8,30 @@ const Card = ({ image, id, name, types, evo }) => {
     return txt[0].toUpperCase() + txt.slice(1).toLowerCase();
   }
 
+  const handleDivClick = async (event) => {
+    console.log("NO");
+    const id = event.target.id;
+
+    const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`);
+    const data = await response.json();
+    const pokeId = data.id;
+    const name = data.name;
+    console.log({ pokeId });
+    return (
+      <>
+        <div>
+          <p>{pokeId}</p>
+          <p>{name}</p>
+        </div>
+      </>
+    );
+  };
+
   return (
-    <div className="card">
+    <div id={pokeId} className="card" onClick={handleDivClick()}>
       <div className="cardTop">
         <img src={image} alt="YES" className="img" />
-        <p className="id">ID/{id}</p>
+        <p className="id">ID/{pokeId}</p>
       </div>
       <div className="cardBottom">
         <h3 className="name">{capitalize(name)}</h3>

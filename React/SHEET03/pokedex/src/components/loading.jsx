@@ -1,5 +1,4 @@
 const loading = () => {
-  //retrun a loading animation
   return (
     <>
       <img
