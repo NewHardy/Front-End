@@ -1,6 +1,9 @@
 import "./pokecard.css";
+import { use, useState } from "react";
 
 const Card = ({ image, pokeId, name, types, evo }) => {
+  const [details, toggleDetails] = useState(false);
+
   function capitalize(txt) {
     if (!txt) {
       return txt;
@@ -28,25 +31,35 @@ const Card = ({ image, pokeId, name, types, evo }) => {
   };
 
   return (
-    <div id={pokeId} className="card" onClick={handleDivClick()}>
-      <div className="cardTop">
-        <img src={image} alt="YES" className="img" />
-        <p className="id">ID/{pokeId}</p>
-      </div>
-      <div className="cardBottom">
-        <h3 className="name">{capitalize(name)}</h3>
-        <ul className="types">
-          {types.map((type, yes) => (
-            <li key={yes}>{type.toUpperCase()}</li>
-          ))}
-        </ul>
-        {evo && (
-          <div className="evo">
-            <p className="evoFrom">Evolutions from:</p>
-            <p className="evoName">{evo}</p>
+    <div id={pokeId} className="card" onClick={() => toggleDetails(!details)}>
+      {!details ? (
+        <>
+          <div className="cardTop">
+            <img src={image} alt="YES" className="img" />
+            <p className="id">ID/{pokeId}</p>
           </div>
-        )}
-      </div>
+          <div className="cardBottom">
+            <h3 className="name">{capitalize(name)}</h3>
+            <ul className="types">
+              {types.map((type, yes) => (
+                <li key={yes}>{type.toUpperCase()}</li>
+              ))}
+            </ul>
+            {evo && (
+              <div className="evo">
+                <p className="evoFrom">Evolutions from:</p>
+                <p className="evoName">{evo}</p>
+              </div>
+            )}
+          </div>
+        </>
+      ) : (
+        <>
+          <div className="details">
+            <img src={image} alt="no image" />
+          </div>
+        </>
+      )}
     </div>
   );
 };

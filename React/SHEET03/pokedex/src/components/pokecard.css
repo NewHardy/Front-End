@@ -79,3 +79,15 @@
     }
   }
 }
+.details {
+  display: flex;
+  border: 1px solid rgb(215 212 194);
+  background-color: white;
+  justify-content: center;
+  align-items: center;
+  img {
+    height: 300px;
+    width: 300px;
+    opacity: 50%;
+  }
+}
