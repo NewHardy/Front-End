@@ -1,5 +1,6 @@
 import "./pokecard.css";
-import { use, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 
 const Card = ({ image, pokeId, name, types, evo }) => {
   const [details, toggleDetails] = useState(false);
@@ -11,24 +12,7 @@ const Card = ({ image, pokeId, name, types, evo }) => {
     return txt[0].toUpperCase() + txt.slice(1).toLowerCase();
   }
 
-  const handleDivClick = async (event) => {
-    console.log("NO");
-    const id = event.target.id;
-
-    const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`);
-    const data = await response.json();
-    const pokeId = data.id;
-    const name = data.name;
-    console.log({ pokeId });
-    return (
-      <>
-        <div>
-          <p>{pokeId}</p>
-          <p>{name}</p>
-        </div>
-      </>
-    );
-  };
+  const navigate = useNavigate();
 
   return (
     <div id={pokeId} className="card" onClick={() => toggleDetails(!details)}>
@@ -57,6 +41,14 @@ const Card = ({ image, pokeId, name, types, evo }) => {
         <>
           <div className="details">
             <img src={image} alt="no image" />
+            <button
+              className="moreInfo"
+              onClick={() => {
+                navigate(`/pokeinfo/${pokeId}`);
+              }}
+            >
+              More Info
+            </button>
           </div>
         </>
       )}

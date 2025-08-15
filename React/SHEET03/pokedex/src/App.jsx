@@ -1,8 +1,8 @@
 import React from "react";
-import PokeGrid from "./components/pokegrid";
 import Pokedex from "./components/pokedex";
-import NotFound from "./components/NotFound";
-import { Route, Router, Routes } from "react-router-dom";
+import NotFound from "./components/notFound";
+import PokeInfo from "./components/pokeInfo";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import "./App.css";
 
 function App() {
@@ -12,6 +12,7 @@ function App() {
         <Routes>
           <Route path={"/"} element={<Pokedex />} />
           <Route path={"*"} element={<NotFound />} />
+          <Route path={"/pokeinfo/*"} element={<PokeInfo />} />
         </Routes>
       </Router>
     </>

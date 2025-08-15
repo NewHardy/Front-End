@@ -1,1 +1,5 @@
-idk what data to put
+hp= url.stats.0
+attack= url.stats.1
+speed= url.stats.5
+nextEvo = ulr.species.url => speciesUrl.evolutionChain.url => evoUrl.evolvesTo.0.
+levelToEvo
